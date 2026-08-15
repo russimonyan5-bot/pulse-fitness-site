@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PULSE — фитнес-подписка нового поколения</title>
+<meta name="description" content="PULSE — персональная подписка на тренировки: интерактивная модель тела, программа под твои мышцы и один прозрачный тариф.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23101012%22/><path d=%22M10 52h18l8-24 14 44 10-30 6 10h24%22 fill=%22none%22 stroke=%22%23c6ff3d%22 stroke-width=%228%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="noise-overlay"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#home" class="logo">
+      <span class="logo__mark">
+        <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#181a16"/>
+          <path d="M5 22h6l3-10 6 19 4-13 3 4h8" fill="none" stroke="#c6ff3d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="logo__text">PULSE<span class="logo__dot">.</span></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#body" class="nav__link">Тело</a>
+      <a href="#subscribe" class="nav__link">Подписка</a>
+    </nav>
+
+    <div class="header__actions">
+      <a href="tel:+78001234567" class="header__phone">+7 800 123‑45‑67</a>
+      <a href="#subscribe" class="btn btn--accent btn--sm">Оформить за 178 ₽</a>
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__list">
+    <a href="#body">Тело</a>
+    <a href="#subscribe">Подписка</a>
+    <a href="#subscribe" class="btn btn--accent">Оформить за 178 ₽</a>
+  </div>
+  <div class="mobile-menu__phone">
+    <a href="tel:+78001234567">+7 800 123‑45‑67</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero hero--compact" id="home">
+    <div class="hero__bg-glow"></div>
+    <div class="hero__grid"></div>
+
+    <div class="container hero__inner hero__inner--center">
+      <div class="hero__text hero__text--center" data-reveal>
+        <span class="eyebrow">Фитнес‑подписка нового поколения</span>
+        <h1 class="hero__title">Путь к телу<br><span class="text-accent">мечты</span> начинается<br>здесь</h1>
+        <p class="hero__desc">Выбери мышцу на теле, узнай, за что она отвечает, и получи персональную программу тренировок по одной простой подписке.</p>
+        <div class="hero__cta">
+          <a href="#body" class="btn btn--accent btn--lg">Смотреть модель тела</a>
+          <a href="#subscribe" class="btn btn--ghost btn--lg">Оформить за 178 ₽</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="#body" class="scroll-cue" aria-label="Листать вниз">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ===================== 3D ТЕЛО ===================== -->
+  <section class="section body-section" id="body">
+    <div class="container">
+      <div class="section__head section__head--center" data-reveal>
+        <span class="eyebrow">Интерактивная модель</span>
+        <h2 class="section__title">Узнай, за что отвечает<br>каждая мышца</h2>
+        <p class="section__desc">Нажми на тело или на кнопку — коротко расскажем, за что отвечает эта мышца и что даёт тренировка.</p>
+      </div>
+
+      <div class="body-widget" data-reveal>
+        <div class="body-widget__stage">
+          <div class="body-widget__glow"></div>
+          <div class="body-photo" id="bodyPhoto">
+            <div class="body-photo__frame">
+              <img class="body-photo__img is-visible" data-view="front" src="images/body-front.png" alt="3D-модель тела — вид спереди">
+              <img class="body-photo__img" data-view="back" src="images/body-back.png" alt="3D-модель тела — вид сзади">
+
+              <svg class="body-photo__spotlight is-visible" data-view="front" viewBox="0 0 512 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <defs>
+                  <mask id="spotMaskFront" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="1024">
+                    <rect x="0" y="0" width="512" height="1024" fill="#000"/>
+                    <circle class="spot-c" data-spot="front-1" cx="-100" cy="-100" r="0"/>
+                    <circle class="spot-c" data-spot="front-2" cx="-100" cy="-100" r="0"/>
+                  </mask>
+                </defs>
+                <image href="images/body-front.png" x="0" y="0" width="512" height="1024" mask="url(#spotMaskFront)"/>
+              </svg>
+              <svg class="body-photo__spotlight" data-view="back" viewBox="0 0 512 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <defs>
+                  <mask id="spotMaskBack" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="1024">
+                    <rect x="0" y="0" width="512" height="1024" fill="#000"/>
+                    <circle class="spot-c" data-spot="back-1" cx="-100" cy="-100" r="0"/>
+                    <circle class="spot-c" data-spot="back-2" cx="-100" cy="-100" r="0"/>
+                  </mask>
+                </defs>
+                <image href="images/body-back.png" x="0" y="0" width="512" height="1024" mask="url(#spotMaskBack)"/>
+              </svg>
+
+              <div class="body-photo__pins is-visible" data-pins="front">
+                <button class="pin" data-group="shoulders" style="left:75%;top:20.5%" aria-label="Плечи"></button>
+                <button class="pin" data-group="shoulders" style="left:25%;top:20.5%" aria-label="Плечи"></button>
+                <button class="pin" data-group="chest" style="left:50%;top:23%" aria-label="Грудь"></button>
+                <button class="pin" data-group="abs" style="left:50%;top:33.5%" aria-label="Пресс"></button>
+                <button class="pin" data-group="biceps" style="left:76.5%;top:30.5%" aria-label="Бицепс"></button>
+                <button class="pin" data-group="biceps" style="left:23.5%;top:30.5%" aria-label="Бицепс"></button>
+                <button class="pin" data-group="forearms" style="left:81.5%;top:46%" aria-label="Предплечья"></button>
+                <button class="pin" data-group="forearms" style="left:18.5%;top:46%" aria-label="Предплечья"></button>
+                <button class="pin" data-group="legs" style="left:56%;top:61.5%" aria-label="Ноги"></button>
+                <button class="pin" data-group="legs" style="left:44%;top:61.5%" aria-label="Ноги"></button>
+              </div>
+              <div class="body-photo__pins" data-pins="back">
+                <button class="pin" data-group="back" style="left:50%;top:26.5%" aria-label="Спина"></button>
+                <button class="pin" data-group="triceps" style="left:86%;top:28%" aria-label="Трицепс"></button>
+                <button class="pin" data-group="triceps" style="left:14%;top:28%" aria-label="Трицепс"></button>
+              </div>
+            </div>
+          </div>
+          <div class="body-widget__hint">Нажми на мышцу</div>
+        </div>
+
+        <div class="body-widget__panel">
+          <div class="muscle-groups" id="muscleGroups">
+            <button class="muscle-btn" data-group="shoulders">Плечи</button>
+            <button class="muscle-btn" data-group="chest">Грудь</button>
+            <button class="muscle-btn" data-group="back">Спина</button>
+            <button class="muscle-btn" data-group="abs">Пресс</button>
+            <button class="muscle-btn" data-group="biceps">Бицепс</button>
+            <button class="muscle-btn" data-group="triceps">Трицепс</button>
+            <button class="muscle-btn" data-group="forearms">Предплечья</button>
+            <button class="muscle-btn" data-group="legs">Ноги</button>
+          </div>
+
+          <div class="muscle-info" id="muscleInfo">
+            <span class="muscle-info__eyebrow">Подсказка</span>
+            <h3 class="muscle-info__title">Выбери группу мышц</h3>
+            <p class="muscle-info__text">Нажми на кнопку или прямо на тело — мышца подсветится, и мы расскажем, за что она отвечает.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ПОДПИСКА ===================== -->
+  <section class="section subscribe-section" id="subscribe">
+    <div class="cta__glow"></div>
+    <div class="container container--narrow">
+      <div class="section__head section__head--center" data-reveal>
+        <span class="eyebrow">Подписка</span>
+        <h2 class="section__title">Один тариф.<br>Полный доступ уже сегодня</h2>
+      </div>
+
+      <div class="plan-card" data-reveal>
+        <span class="plan-card__badge">Скидка действует</span>
+
+        <div class="plan-card__price-row">
+          <div class="plan-card__price">
+            <span class="plan-card__old">3 490 ₽</span>
+            <span class="plan-card__new">178 ₽</span>
+          </div>
+          <span class="plan-card__sub">разовый платёж · пробный период 1 день</span>
+        </div>
+
+        <ul class="plan-card__list">
+          <li>Доступ в личный кабинет</li>
+          <li>Персональная программа тренировок</li>
+          <li>Видео- и информационные материалы</li>
+          <li>Отслеживание прогресса по группам мышц</li>
+          <li>Поддержка тренера в чате</li>
+        </ul>
+
+        <form class="plan-card__form" id="joinForm">
+          <input type="text" placeholder="Имя" required aria-label="Имя">
+          <input type="tel" placeholder="Телефон" required aria-label="Телефон">
+          <button type="submit" class="btn btn--accent btn--lg btn--full">Оформить за 178 ₽</button>
+        </form>
+
+        <div class="plan-card__terms">
+          <h4>Как это работает</h4>
+          <p>Сегодня спишется <b>178 ₽</b> за пробный доступ на <b>1 день</b>. Если не отменишь подписку до окончания пробного периода, произойдёт автоматическое продление доступа на <b>15 дней за 1 000 ₽</b> — либо двумя платежами: 2 × 500 ₽, либо 300 ₽ + 200 ₽. При недостаточности средств доступ к материалам будет ограничен. Отменить подписку можно в любой момент в личном кабинете — без звонков в поддержку.</p>
+        </div>
+
+        <div class="plan-card__pay">
+          <span class="pay-badge">VISA</span>
+          <span class="pay-badge">Mastercard</span>
+          <span class="pay-badge">МИР</span>
+          <span class="plan-card__pay-text">Безопасность платежей обеспечивается банком‑эквайером</span>
+        </div>
+      </div>
+
+      <div class="accordion accordion--compact" data-reveal>
+        <div class="accordion__item">
+          <button class="accordion__head">
+            <span>Как отменить подписку?</span>
+            <span class="accordion__icon"></span>
+          </button>
+          <div class="accordion__body">
+            <p>В любой момент в личном кабинете в разделе «Отменить подписку» — без звонков и лишних вопросов.</p>
+          </div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__head">
+            <span>Что такое рекуррентный платёж?</span>
+            <span class="accordion__icon"></span>
+          </button>
+          <div class="accordion__body">
+            <p>Это автоматическое списание с карты без повторного ввода реквизитов — по такой же схеме работают Яндекс, Google, Netflix и другие сервисы по подписке.</p>
+          </div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__head">
+            <span>Могу ли я заниматься при хронических заболеваниях?</span>
+            <span class="accordion__icon"></span>
+          </button>
+          <div class="accordion__body">
+            <p>Да, программа адаптируется под уровень подготовки. При серьёзных диагнозах рекомендуем предварительно проконсультироваться с врачом.</p>
+          </div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__head">
+            <span>Безопасно ли платить картой на сайте?</span>
+            <span class="accordion__icon"></span>
+          </button>
+          <div class="accordion__body">
+            <p>Да, оплата проходит через банк‑эквайер по защищённому протоколу — данные карты не хранятся на сайте.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer footer--compact">
+  <div class="container">
+    <div class="footer__grid footer__grid--compact">
+      <div class="footer__col footer__col--brand">
+        <a href="#home" class="logo">
+          <span class="logo__mark">
+            <svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true">
+              <rect width="40" height="40" rx="10" fill="#181a16"/>
+              <path d="M5 22h6l3-10 6 19 4-13 3 4h8" fill="none" stroke="#c6ff3d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="logo__text">PULSE<span class="logo__dot">.</span></span>
+        </a>
+        <p class="footer__about">Персональная фитнес‑подписка: интерактивная модель тела и программа тренировок в личном кабинете.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Информация</h4>
+        <a href="#">О нас</a>
+        <a href="#">Отмена подписки</a>
+        <a href="#">Заявка на возврат</a>
+        <a href="#">Чат с поддержкой</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Документы</h4>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Правила сервиса</a>
+        <a href="#">Договор‑оферта</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+78001234567">+7 800 123‑45‑67</a>
+        <a href="mailto:hello@pulse.fitness">hello@pulse.fitness</a>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <p>ИП Иванов Иван Иванович · ИНН 000000000000 · ОГРНИП 000000000000000</p>
+      <p>Этот веб‑сайт использует cookies для улучшения работы сервиса.</p>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© PULSE, 2024–2026. Все права защищены.</span>
+      <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

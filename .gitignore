@@ -1,0 +1,7 @@
+# Reference material — not part of the site, kept out of the public repo
+video_2026-08-15_13-13-00.mp4
+*.mp4
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
